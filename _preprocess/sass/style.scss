@@ -1,0 +1,27 @@
+/*!
+Theme Name:     L'Usine
+Theme URI:      http://lusine.com/
+Description:    Custom theme for L'Usine
+Author:         Nicolas Lagarde
+Author URI:     http://www.nicolaslagarde.com/
+Template:       resi
+Version:        0.1
+Text Domain: 	lusine
+*/
+
+// TODO: parent theme CSS is not loading
+@import "../resi/style.css";
+
+
+.fullwidth-gallery {
+    width: 80%;
+    float: right;
+}
+
+.header-cover {
+    position: absolute;
+    width: 20%;
+    top: auto;
+    left: 0;
+    background-color: black;
+}
