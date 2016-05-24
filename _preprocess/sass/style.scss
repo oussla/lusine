@@ -13,15 +13,84 @@ Text Domain: 	lusine
 @import "../resi/style.css";
 
 
+@import "_font";
+
+
+/**
+ * MISC
+ */
+
 .fullwidth-gallery {
     width: 80%;
     float: right;
 }
 
 .header-cover {
+	display: none;
     position: absolute;
     width: 20%;
     top: auto;
     left: 0;
     background-color: black;
+}
+
+
+
+body {
+	font-family: 'bebas_neue_regularregular';
+}
+
+
+/**
+ * Navigation
+ */
+
+
+.pre-header {
+    background: #000;
+    border-bottom: none;
+    padding: 0 20px;
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    top: 30vh;
+
+    font-size: 35px;
+}
+
+
+.main-navigation {
+
+    a {
+        font-size: 35px;
+    }
+
+    li {
+        line-height: 72px;
+    }
+
+    ul {
+
+        ul {
+            border: none;
+            box-shadow: none;
+
+            a {
+                border: none;
+            }
+
+        }
+
+        li:hover > ul, 
+        li.focus > ul {
+            left: 0;
+            top:40vh;
+            background: #fff;
+            width: 100%;
+            position: fixed;
+        }
+
+    }
+
+
 }
