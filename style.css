@@ -7,4 +7,4 @@ Author URI:     http://www.nicolaslagarde.com/
 Template:       resi
 Version:        0.1
 Text Domain: 	lusine
-*/@import url(../resi/style.css);.fullwidth-gallery{width:80%;float:right}.header-cover{position:absolute;width:20%;top:auto;left:0;background-color:black}
+*/@import url(../resi/style.css);@font-face{font-family:'bebas_neue_regularregular';src:url("./fonts/bebasneue_regular-webfont.woff2") format("woff2"),url("./fonts/bebasneue_regular-webfont.woff") format("woff");font-weight:normal;font-style:normal}.fullwidth-gallery{width:80%;float:right}.header-cover{display:none;position:absolute;width:20%;top:auto;left:0;background-color:black}body{font-family:'bebas_neue_regularregular'}.pre-header{background:#000;border-bottom:none;padding:0 20px;height:10vh;position:fixed;width:100%;top:30vh;font-size:35px}.main-navigation a{font-size:35px}.main-navigation li{line-height:72px}.main-navigation ul ul{border:none;box-shadow:none}.main-navigation ul ul a{border:none}.main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:0;top:40vh;background:#fff;width:100%;position:fixed}
