@@ -16,6 +16,9 @@ Text Domain: 	lusine
 @import "_font";
 @import "_mixins";
 
+$w2cols: 16.66667%;
+
+
 
 /**
  * MISC
@@ -23,7 +26,7 @@ Text Domain: 	lusine
 
 body {
 	font-family: 'bebas_neue_regularregular';
-    background-color: #ccc;
+    @include cover-background('./img/background.jpg');
 }
 
 .fullwidth-gallery {
@@ -47,8 +50,18 @@ body {
  */
 
 .site-title {
-    margin: 0;
-    background-color: red;
+
+    margin: 0 0 0 $w2cols;
+
+    a {
+        display: block;
+        margin: 0;
+        text-indent: -9999px;
+        width: 250px;
+        height: 300px;
+        background: url(./img/lusine-tattoo-logo.png) transparent no-repeat;  
+    }
+
 }
 
 
@@ -59,7 +72,7 @@ body {
 
 .pre-header { 
     border-bottom: none;
-    padding: 0 5%;
+    padding: 0 $w2cols 0 $w2cols;
     width: 80%;
     background: #000;
     height: 100px;

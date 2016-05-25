@@ -7,4 +7,133 @@ Author URI:     http://www.nicolaslagarde.com/
 Template:       resi
 Version:        0.1
 Text Domain: 	lusine
-*/@import url(../resi/style.css);@font-face{font-family:'bebas_neue_regularregular';src:url("./fonts/bebasneue_regular-webfont.woff2") format("woff2"),url("./fonts/bebasneue_regular-webfont.woff") format("woff");font-weight:normal;font-style:normal}.fullwidth-gallery{width:80%;float:right}.header-cover{display:none;position:absolute;width:20%;top:auto;left:0;background-color:black}body{font-family:'bebas_neue_regularregular'}.pre-header{background:#000;border-bottom:none;padding:0 20px;height:10vh;position:fixed;width:100%;top:30vh;font-size:35px}.main-navigation a{font-size:35px}.main-navigation li{line-height:72px}.main-navigation ul ul{border:none;box-shadow:none}.main-navigation ul ul a{border:none}.main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:0;top:40vh;background:#fff;width:100%;position:fixed}
+*/
+@import url(../resi/style.css);
+@font-face {
+  font-family: 'bebas_neue_regularregular';
+  src: url("./fonts/bebasneue_regular-webfont.woff2") format("woff2"), url("./fonts/bebasneue_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * Transition mixin
+ * Usage:  
+ * 		@include transition(color .3s ease);
+ * 		
+ */
+/**
+ * MISC
+ */
+body {
+  font-family: 'bebas_neue_regularregular';
+  background: url("./img/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.fullwidth-gallery {
+  width: 80%;
+  float: right;
+}
+
+.header-cover {
+  display: none;
+  position: absolute;
+  width: 20%;
+  top: auto;
+  left: 0;
+  background-color: black;
+}
+
+/**
+ * Identity
+ */
+.site-title {
+  margin: 0 0 0 16.66667%;
+}
+.site-title a {
+  display: block;
+  margin: 0;
+  text-indent: -9999px;
+  width: 250px;
+  height: 300px;
+  background: url(./img/lusine-tattoo-logo.png) transparent no-repeat;
+}
+
+/**
+ * Navigation
+ */
+.pre-header {
+  border-bottom: none;
+  padding: 0 16.66667% 0 16.66667%;
+  width: 80%;
+  background: #000;
+  height: 100px;
+  font-size: 35px;
+}
+
+.main-navigation a {
+  padding: 14px 6px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+}
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a {
+  color: #fff;
+}
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+  color: #fff;
+  text-decoration: underline;
+}
+.main-navigation ul li {
+  height: 100%;
+  line-height: 72px;
+  padding: 0;
+}
+.main-navigation ul ul {
+  border: none;
+  box-shadow: none;
+}
+.main-navigation ul ul a, .main-navigation ul ul a:hover {
+  color: #000;
+  border: none;
+}
+.main-navigation ul li > ul {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  width: 100%;
+  padding: 0 1000em;
+  margin: 0 -1000em;
+}
+.main-navigation ul li > ul > li {
+  line-height: 45px;
+}
+.main-navigation ul li > ul > li a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.main-navigation ul li > ul > li:first-child a {
+  padding-top: 14px;
+}
+.main-navigation ul li > ul > li:last-child a {
+  padding-bottom: 14px;
+}
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  visibility: visible;
+  opacity: 1;
+}
