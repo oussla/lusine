@@ -20,7 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site animated fadeIn delay">
+<div id="page" class="hfeed site animated delay">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'resi' ); ?></a>
 
     <h1 class='site-title'> 
