@@ -6,9 +6,11 @@
 get_header('cover'); ?>
 
     
-    
-    <h2>HOMEPAGE TEST</h2>
-    
+    <?php
+
+    	// No content on homepage. 
+
+    ?>
 
 
 <?php get_footer(); ?>
