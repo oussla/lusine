@@ -20,6 +20,11 @@ function lusine_setup() {
 	add_image_size('gallery_small', 250, 250);
 
 
+	register_nav_menus(array(
+		'footer_menu' => 'Footer Menu'
+	));
+
+
 	/**
 	 * Remove bunks of unused styles and code
 	 */

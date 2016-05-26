@@ -24,9 +24,20 @@ $w2cols: 16.66667%;
  * MISC
  */
 
+html, body, .site {
+    height: 100%;
+}
+
 body {
 	font-family: 'bebas_neue_regularregular';
     @include cover-background('./img/background.jpg');
+}
+
+.site-wrapper {
+    height: auto;
+    min-height: 100%;
+
+    padding-bottom: 340px;
 }
 
 .fullwidth-gallery {
@@ -165,5 +176,62 @@ body {
 
     }
 
+
+}
+
+
+
+
+/**
+ * Footer
+ */
+
+.site-footer {
+
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 340px;
+    margin-top: -340px;
+
+    padding: 150px 0 120px 0;
+    color: #fff;
+    background: #000;
+    font-size: 16px;
+
+    a {
+        color: #fff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .address {
+        font-style: normal;
+        font-size: 24px;
+    }
+
+    .footer-menu {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+
+        li {
+            display: inline;
+        }
+
+        li::after {
+            content: '–';
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        li:last-child::after {
+            content: none;
+            padding-right: 0;
+        }
+
+    }
 
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name:     L'Usine
 Theme URI:      http://lusine.com/
@@ -24,6 +25,10 @@ Text Domain: 	lusine
 /**
  * MISC
  */
+html, body, .site {
+  height: 100%;
+}
+
 body {
   font-family: 'bebas_neue_regularregular';
   background: url("./img/background.jpg") no-repeat center center fixed;
@@ -31,6 +36,12 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.site-wrapper {
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 340px;
 }
 
 .fullwidth-gallery {
@@ -136,4 +147,46 @@ body {
 .main-navigation ul li.focus > ul {
   visibility: visible;
   opacity: 1;
+}
+
+/**
+ * Footer
+ */
+.site-footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 340px;
+  margin-top: -340px;
+  padding: 150px 0 120px 0;
+  color: #fff;
+  background: #000;
+  font-size: 16px;
+}
+.site-footer a {
+  color: #fff;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.site-footer .address {
+  font-style: normal;
+  font-size: 24px;
+}
+.site-footer .footer-menu {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.site-footer .footer-menu li {
+  display: inline;
+}
+.site-footer .footer-menu li::after {
+  content: '–';
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.site-footer .footer-menu li:last-child::after {
+  content: none;
+  padding-right: 0;
 }

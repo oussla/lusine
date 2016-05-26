@@ -23,122 +23,125 @@
 <div id="page" class="hfeed site animated delay">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'resi' ); ?></a>
 
-    <h1 class='site-title'> 
-                            
-        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-            <?php bloginfo( 'name' ); ?>
-        </a>
-        
-    </h1>
-    
-    <div id="nav-header" class="pre-header">
-    	<div class="navigation-container">
-        
-    	 <nav id="site-navigation" class="main-navigation" role="navigation">
-         
-             <button class="menu-toggle toggle-menu menu-left push-body" aria-controls="primary-menu" aria-expanded="false">
-			 	
-				<?php $resi_menu_toggle_option = get_theme_mod( 'resi_menu_toggle', 'icon' ); 
 
-					$resi_menu_display = '';
+    <div class="site-wrapper">
 
-					if ( $resi_menu_toggle_option == 'icon' ) {
-				
-						$resi_menu_display = sprintf( '<i class="fa fa-bars"></i>' );
-			
-					} else if ( $resi_menu_toggle_option == 'label' ) {
-				
-						$resi_menu_display = esc_html__( 'Menu', 'resi' );
-			
-					} else if ( $resi_menu_toggle_option == 'icon-label' ) {
-				
-						$resi_menu_display = sprintf( '<i class="fa fa-bars"></i>', esc_html__( 'Menu', 'resi' ) );    
-			
-					}
-
-					echo $resi_menu_display; ?>
+        <h1 class='site-title'> 
+                                
+            <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+                <?php bloginfo( 'name' ); ?>
+            </a>
             
-             </button>
+        </h1>
+        
+        <div id="nav-header" class="pre-header">
+        	<div class="navigation-container">
+            
+        	 <nav id="site-navigation" class="main-navigation" role="navigation">
              
-             <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                 <button class="menu-toggle toggle-menu menu-left push-body" aria-controls="primary-menu" aria-expanded="false">
+    			 	
+    				<?php $resi_menu_toggle_option = get_theme_mod( 'resi_menu_toggle', 'icon' ); 
+
+    					$resi_menu_display = '';
+
+    					if ( $resi_menu_toggle_option == 'icon' ) {
+    				
+    						$resi_menu_display = sprintf( '<i class="fa fa-bars"></i>' );
+    			
+    					} else if ( $resi_menu_toggle_option == 'label' ) {
+    				
+    						$resi_menu_display = esc_html__( 'Menu', 'resi' );
+    			
+    					} else if ( $resi_menu_toggle_option == 'icon-label' ) {
+    				
+    						$resi_menu_display = sprintf( '<i class="fa fa-bars"></i>', esc_html__( 'Menu', 'resi' ) );    
+    			
+    					}
+
+    					echo $resi_menu_display; ?>
+                
+                 </button>
+                 
+                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                 
+             </nav><!-- #site-navigation -->
              
-         </nav><!-- #site-navigation -->
-         
-       	</div>
-        
-        
-        <?php if( get_theme_mod( 'active_social_icons' ) == '') : ?>   
-        
-			<div class="social-container"> 
-        
-        		<?php get_template_part( 'menu', 'social' ); ?>
+           	</div>
             
-        	</div>
             
-        <?php endif; ?>
-        
-        
-    </div>
-
-
-	<?php if( get_theme_mod( 'active_cover_title' ) == '') : ?>  
-
-	<header id="masthead" class="site-header header-cover" role="banner">
-                <div class="site-branding">
-                	
-                   
-                    
-					<?php if ( get_theme_mod( 'resi_logo' ) ) : ?>
-              
-    					<div class="site-logo site-title"> 
-       						<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-                            
-                    			<img 
-                                
-                                	src='<?php echo esc_url( get_theme_mod( 'resi_logo' ) ); ?>' 
-                                
-									<?php if ( get_theme_mod( 'logo_size' ) ) : ?>
-                                    	width="<?php echo esc_attr( get_theme_mod( 'logo_size', '165' )); ?>"
-									<?php endif; ?> 
-                                    
-                                    alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-                                >
-                                
-                    		</a> 
-    					</div><!-- site-logo -->  
+            <?php if( get_theme_mod( 'active_social_icons' ) == '') : ?>   
+            
+    			<div class="social-container"> 
+            
+            		<?php get_template_part( 'menu', 'social' ); ?>
                 
-					<?php else : ?>
-            
-    					<hgroup>
-       						<h1 class='site-title'> 
-                            
-                    			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-									<?php bloginfo( 'name' ); ?>
-                    			</a>
-                                
-                    		</h1>
-    					</hgroup>
+            	</div>
                 
-					<?php endif; ?>
-        
-					<?php if( get_bloginfo('description') <> '') : ?>
-        			
-                    	<p class="site-description">
-							<?php bloginfo( 'description' ); ?>   
-                        </p>
+            <?php endif; ?>
+            
+            
+        </div>
+
+
+    	<?php if( get_theme_mod( 'active_cover_title' ) == '') : ?>  
+
+    	<header id="masthead" class="site-header header-cover" role="banner">
+                    <div class="site-branding">
+                    	
+                       
                         
-                    <?php endif; ?>
+    					<?php if ( get_theme_mod( 'resi_logo' ) ) : ?>
+                  
+        					<div class="site-logo site-title"> 
+           						<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+                                
+                        			<img 
+                                    
+                                    	src='<?php echo esc_url( get_theme_mod( 'resi_logo' ) ); ?>' 
+                                    
+    									<?php if ( get_theme_mod( 'logo_size' ) ) : ?>
+                                        	width="<?php echo esc_attr( get_theme_mod( 'logo_size', '165' )); ?>"
+    									<?php endif; ?> 
+                                        
+                                        alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+                                    >
+                                    
+                        		</a> 
+        					</div><!-- site-logo -->  
                     
+    					<?php else : ?>
                 
+        					<hgroup>
+           						<h1 class='site-title'> 
+                                
+                        			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+    									<?php bloginfo( 'name' ); ?>
+                        			</a>
+                                    
+                        		</h1>
+        					</hgroup>
                     
-                </div><!-- .site-branding -->
-                
-	</header><!-- #masthead -->
-    
-    <?php endif; ?> 
-    
-    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-    </nav>
+    					<?php endif; ?>
+            
+    					<?php if( get_bloginfo('description') <> '') : ?>
+            			
+                        	<p class="site-description">
+    							<?php bloginfo( 'description' ); ?>   
+                            </p>
+                            
+                        <?php endif; ?>
+                        
+                    
+                        
+                    </div><!-- .site-branding -->
+                    
+    	</header><!-- #masthead -->
+        
+        <?php endif; ?> 
+        
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+        </nav>
 
-	<div id="content" class="site-content">
+    	<div id="content" class="site-content">
