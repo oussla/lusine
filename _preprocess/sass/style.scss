@@ -16,7 +16,18 @@ Text Domain: 	lusine
 @import "_font";
 @import "_mixins";
 
+$w1col: 8.33334%;
 $w2cols: 16.66667%;
+$w3cols: 25%;
+$w4cols: 33.33334%;
+$w5cols: 41.66667%;
+$w6cols: 50%;
+
+$w8cols: 66.66667%;
+$w9cols: 75%;
+
+
+
 
 
 
@@ -84,7 +95,7 @@ body {
 .pre-header { 
     border-bottom: none;
     padding: 0 $w2cols 0 $w2cols;
-    width: 80%;
+    width: $w9cols;
     background: #000;
     height: 100px;
 
@@ -147,6 +158,14 @@ body {
             width: 100%;
             padding: 0 1000em;
             margin: 0 -1000em;
+
+
+            .current_page_item > a, 
+            .current-menu-item > a, 
+            .current_page_ancestor > a {
+                color: #000;
+            }
+
         }
 
         li > ul > li {
@@ -180,6 +199,33 @@ body {
 }
 
 
+/**
+ *
+ *  CONTENTS
+ * 
+ */
+
+.page-title {
+    background: #fff;
+    color: #000;
+    margin: 40px 0 40px $w1col;
+    width: $w6cols;
+    padding: 40px $w1col;
+    font-size: 60px;
+}
+
+/**
+ * Home
+ */
+
+.page-template-home .site-content {
+    min-height: 45vh;
+}
+
+
+/**
+ * Galleries 
+ */
 
 
 /**
@@ -192,7 +238,7 @@ body {
     position: relative;
     z-index: 10;
     height: 340px;
-    margin-top: -340px;
+    margin-top: -240px;
 
     padding: 150px 0 120px 0;
     color: #fff;
