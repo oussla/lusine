@@ -15,9 +15,13 @@ function lusine_setup() {
 	
 
 	/**
-	 * Manage images sizes
+	 * Manage images sizes.
+	 * Images are defined to be resized, not cropped, inside the given dimensions. 
+	 * Height is supersized to less influence the final dimensions. 
 	 */
-	add_image_size('gallery_small', 250, 250);
+	add_image_size('gallery_small', 150, 300);
+	add_image_size('gallery_medium', 250, 500);
+	add_image_size('gallery_large', 500, 1000);
 
 
 	register_nav_menus(array(

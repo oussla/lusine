@@ -22,9 +22,12 @@ $w3cols: 25%;
 $w4cols: 33.33334%;
 $w5cols: 41.66667%;
 $w6cols: 50%;
-
+$w7cols: 58.33334%;
 $w8cols: 66.66667%;
 $w9cols: 75%;
+$w10cols: 83.33334%;
+$w11cols: 91.66667%;
+$w12cols: 100%;
 
 
 
@@ -41,7 +44,8 @@ html, body, .site {
 
 body {
 	font-family: 'bebas_neue_regularregular';
-    @include cover-background('./img/background.jpg');
+    @include cover-background('./img/background.jpg', 'top', 'center');
+    // background: url('./img/background2.jpg') no-repeat top center #f7f7f7;
 }
 
 .site-wrapper {
@@ -199,19 +203,66 @@ body {
 }
 
 
+
+
+.comment-navigation .nav-next a, 
+.posts-navigation .nav-next a, 
+.post-navigation .nav-next a {
+    font-size: 18px;
+}
+
+.comment-navigation .nav-previous a, 
+.posts-navigation .nav-previous a, 
+.post-navigation .nav-previous a {
+    font-size: 18px;
+}
+
 /**
  *
  *  CONTENTS
  * 
  */
 
-.page-title {
+h5 {
+    line-height: 24px;
+}
+
+p {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.page-header {
     background: #fff;
     color: #000;
     margin: 40px 0 40px $w1col;
-    width: $w6cols;
+    width: $w8cols;
     padding: 40px $w1col;
+}
+
+.site-main {
+    .page-header {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.page-title {
     font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-fullwidth article, 
+.blog-sidebar article, 
+.single-sidebar article {
+    border: none;
+}
+
+.solid-background { 
+    .content-area {
+        border: none;
+    }
 }
 
 /**
@@ -226,6 +277,12 @@ body {
 /**
  * Galleries 
  */
+
+.fullwidth-gallery {
+    width: $w10cols;
+    float:none;
+    margin-left: $w1col;
+}
 
 
 /**
