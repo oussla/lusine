@@ -1,5 +1,7 @@
+$font-main: 'bebas_neue_regularregular';
+
 @font-face {
-    font-family: 'bebas_neue_regularregular';
+    font-family: $font-main;
     src: url('./fonts/bebasneue_regular-webfont.woff2') format('woff2'),
          url('./fonts/bebasneue_regular-webfont.woff') format('woff');
     font-weight: normal;

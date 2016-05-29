@@ -43,7 +43,7 @@ html, body, .site {
 }
 
 body {
-	font-family: 'bebas_neue_regularregular';
+	font-family: $font-main;
     @include cover-background('./img/background.jpg', 'top', 'center');
     // background: url('./img/background2.jpg') no-repeat top center #f7f7f7;
 }
@@ -232,6 +232,22 @@ p {
     font-size: 12px;
 }
 
+.grid-pad {
+    padding: 0;
+}
+
+.grid {
+    width: 75%;
+    margin: 40px 0 40px $w1col;
+    width: $w8cols;
+    padding: 40px $w1col;
+}
+
+.col-1-1 {
+    width: 100%;
+    padding-right: 0;
+}
+
 .page-header {
     background: #fff;
     color: #000;
@@ -283,6 +299,82 @@ p {
     float:none;
     margin-left: $w1col;
 }
+
+
+/**
+ * Forms
+ */
+
+.wpcf7 {
+
+    form {
+        margin: 20px 0 0 0;
+        text-align: left;
+        width:100%;
+    }
+
+    label {
+        font-family: $font-main;
+        font-size: 16px;
+    }
+
+    label.required::after {
+        content: "*";
+    }
+
+    input, 
+    textarea,
+    input[type="text"], 
+    input[type="email"], 
+    input[type="url"], 
+    input[type="password"], 
+    input[type="search"] {
+        padding: 2.5%;
+        width:95%;
+        color: #000;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        background: #efefef;
+        border-radius: 0px;
+    }
+
+    input[type="submit"] {
+        font-family: $font-main;
+        font-size: 16px;
+        cursor:pointer;
+        color: #fff;
+        background: #000;
+    }
+
+    .wpcf7-validation-errors,
+    .wpcf7-mail-sent-ng,
+    .wpcf7-mail-sent-ok {
+        border: none;
+        font-family: $font-main;
+    }
+
+    .wpcf7-validation-errors {
+        color: #c83103;
+    }
+
+    .wpcf7-not-valid-tip {
+        margin:1px 0 0 0;
+        color: #c83103;
+        font-size: 16px;
+        font-family: $font-main;
+    }
+
+    .wpcf7-not-valid {
+        border: 1px solid #c83103;
+    }
+
+    .wpcf7-response-output {
+        margin:0;
+        padding:0;
+    }
+
+}
+
 
 
 /**
