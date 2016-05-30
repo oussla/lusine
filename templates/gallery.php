@@ -9,40 +9,43 @@ get_header('cover'); ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-    <header class="page-header">
-        <h1 class="page-title"><?php the_title(); ?></h1>
+    <main id="main gallery" class="site-main" role="main">
 
-        <div class="page-content">
-        <?php the_content(); ?>
-        </div>
-    </header>
-    
-    <section id="gallery-container" class="fullwidth-gallery">
+        <section class="gallery">
+                    
+            <?php get_template_part( 'template-parts/content', 'page' ); ?>        
+
+        </section>
 
         
-        <?php            
+        <section id="gallery-container" class="fullwidth-gallery">
 
-            $gallery = get_field('gallery');
+            
+            <?php            
 
-            if( $gallery ): ?>
-                    <?php foreach( $gallery as $image ): ?>
-                        <figure class="gallery-image">
-                            <a href="<?php echo $image['url']; ?>" class="gallery-link">
+                $gallery = get_field('gallery');
 
-                                <?php                               
-                                echo wp_get_attachment_image($image['id'], 'gallery_medium');
-                                ?>
+                if( $gallery ): ?>
+                        <?php foreach( $gallery as $image ): ?>
+                            <figure class="gallery-image">
+                                <a href="<?php echo $image['url']; ?>" class="gallery-link">
 
-                            </a>
-                        </figure>
-                    <?php endforeach; ?>
-            <?php
+                                    <?php                               
+                                    echo wp_get_attachment_image($image['id'], 'gallery_medium');
+                                    ?>
 
-            endif; 
+                                </a>
+                            </figure>
+                        <?php endforeach; ?>
+                <?php
 
-        ?>
-    	
-	</section>
+                endif; 
+
+            ?>
+        	
+    	</section>
+
+    </main>
 
     <?php endwhile; // End of the loop. ?>
 
