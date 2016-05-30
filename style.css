@@ -85,36 +85,93 @@ body {
   font-size: 35px;
 }
 
-.main-navigation a {
-  padding: 14px 6px;
+.lusine-main-nav a {
+  padding: 0 6px;
   color: #fff;
   font-size: 35px;
   font-weight: bold;
 }
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
+.lusine-main-nav .current_page_item > a,
+.lusine-main-nav .current-menu-item > a,
+.lusine-main-nav .current_page_ancestor > a {
   color: #fff;
 }
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
+.lusine-main-nav li:hover > a,
+.lusine-main-nav li.focus > a {
   color: #fff;
   text-decoration: underline;
 }
-.main-navigation ul li {
+.lusine-main-nav .lusine-menu {
+  /**
+   * Classic Suckerfish Menu
+   */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1;
+  /**
+   * And the custom parts
+   */
+}
+.lusine-main-nav .lusine-menu ul {
+  /* all lists */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1;
+}
+.lusine-main-nav .lusine-menu a {
+  display: block;
+  width: auto;
+}
+.lusine-main-nav .lusine-menu li {
+  /* all list items */
+  float: left;
+  width: 200px;
+  /* width needed or else Opera goes nuts */
+}
+.lusine-main-nav .lusine-menu li ul {
+  /* second-level lists */
+  position: absolute;
+  background: orange;
+  width: 200px;
+  left: -999em;
+  /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+.lusine-main-nav .lusine-menu li ul ul {
+  /* third-and-above-level lists */
+  margin: -1em 0 0 200px;
+}
+.lusine-main-nav .lusine-menu li:hover ul ul, .lusine-main-nav .lusine-menu li.sfhover ul ul {
+  /* NEW */
+  /*left: -999em;*/
+}
+.lusine-main-nav .lusine-menu li:hover ul, .lusine-main-nav .lusine-menu li li:hover ul, .lusine-main-nav .lusine-menu li.sfhover ul, .lusine-main-nav .lusine-menu li li.sfhover ul {
+  /* lists nested under hovered list items */
+  left: auto;
+}
+.lusine-main-nav .lusine-menu > li {
+  display: inline-block;
+  position: relative;
+  z-index: 100;
+  width: auto;
   height: 100%;
-  line-height: 72px;
+  line-height: 100px;
   padding: 0;
 }
-.main-navigation ul ul {
+.lusine-main-nav .lusine-menu > li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+.lusine-main-nav .lusine-menu ul {
   border: none;
   box-shadow: none;
 }
-.main-navigation ul ul a, .main-navigation ul ul a:hover {
+.lusine-main-nav .lusine-menu ul a, .lusine-main-nav .lusine-menu ul a:hover {
   color: #000;
   border: none;
 }
-.main-navigation ul li > ul {
+.lusine-main-nav .lusine-menu > li > ul {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -125,33 +182,41 @@ body {
   position: absolute;
   left: 0;
   top: 100%;
-  background: #fff;
   width: 100%;
-  padding: 0 1000em;
+  padding: 14px 1000em;
   margin: 0 -1000em;
+  z-index: 101;
+  background-color: #fff;
 }
-.main-navigation ul li > ul .current_page_item > a,
-.main-navigation ul li > ul .current-menu-item > a,
-.main-navigation ul li > ul .current_page_ancestor > a {
+.lusine-main-nav .lusine-menu > li > ul li.menu-item-has-children > a,
+.lusine-main-nav .lusine-menu > li > ul li.menu-item-has-children:hover > a {
+  color: #818181;
+}
+.lusine-main-nav .lusine-menu > li > ul .current_page_item > a,
+.lusine-main-nav .lusine-menu > li > ul .current-menu-item > a,
+.lusine-main-nav .lusine-menu > li > ul .current_page_ancestor > a {
   color: #000;
 }
-.main-navigation ul li > ul > li {
-  line-height: 45px;
+.lusine-main-nav .lusine-menu > li > ul > li {
+  padding: 7px 0 7px 0;
 }
-.main-navigation ul li > ul > li a {
-  padding-top: 0;
-  padding-bottom: 0;
+.lusine-main-nav .lusine-menu li li ul {
+  /* nécessaire pour contenir tous les éléments de niveau 3 */
+  width: 100%;
+  background-color: #fff;
 }
-.main-navigation ul li > ul > li:first-child a {
-  padding-top: 14px;
+.lusine-main-nav .lusine-menu li li li {
+  /* élements de niveaux 3 côte à côte */
+  width: auto;
 }
-.main-navigation ul li > ul > li:last-child a {
-  padding-bottom: 14px;
+.lusine-main-nav .lusine-menu li li:hover li {
+  /* DEMO ONLY */
+  background-color: #fff;
 }
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  visibility: visible;
-  opacity: 1;
+.lusine-main-nav .lusine-menu li li li a {
+  /* élements de niveaux 3 côte à côte */
+  width: auto;
+  margin-right: 12px;
 }
 
 .comment-navigation .nav-next a,
@@ -164,6 +229,15 @@ body {
 .posts-navigation .nav-previous a,
 .post-navigation .nav-previous a {
   font-size: 18px;
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation,
+.post-navigation,
+.posts-navigation {
+  width: 75%;
+  margin-left: 8.33334%;
 }
 
 /**
@@ -180,20 +254,11 @@ p {
   font-size: 12px;
 }
 
-.grid-pad {
-  padding: 0;
-}
-
-.grid {
-  width: 75%;
-  margin: 40px 0 40px 8.33334%;
-  width: 66.66667%;
-  padding: 40px 8.33334%;
-}
-
-.col-1-1 {
-  width: 100%;
-  padding-right: 0;
+/**
+ * Resetting some parent theme styles 
+ */
+.blog-fullwidth, .single-fullwidth {
+  max-width: 100% !important;
 }
 
 .page-header {
@@ -221,8 +286,11 @@ p {
   border: none;
 }
 
-.solid-background .content-area {
-  border: none;
+article, .hentry {
+  width: 75%;
+  padding: 40px 8.33334%;
+  margin: 40px 8.33334%;
+  background-color: #fff;
 }
 
 /**
@@ -239,6 +307,21 @@ p {
   width: 83.33334%;
   float: none;
   margin-left: 8.33334%;
+}
+
+.gallery {
+    /*
+    padding-left: 0;
+    padding-right: 0;
+
+    .content-area {
+        padding-left: $w2cols;
+    }
+    */
+}
+.gallery .entry-title {
+  font-size: 60px;
+  line-height: 72px;
 }
 
 /**
