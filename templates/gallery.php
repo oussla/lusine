@@ -5,7 +5,7 @@ Template Name: Gallery
  * @package lusine
  */
 
-get_header('cover'); ?>
+get_header(); ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
 

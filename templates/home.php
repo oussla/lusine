@@ -3,7 +3,7 @@
  * Template Name: Home Page
  */
 
-get_header('cover'); ?>
+get_header(); ?>
 
     
     <?php
