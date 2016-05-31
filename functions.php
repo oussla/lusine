@@ -120,3 +120,19 @@ acf_add_local_field_group(array (
 ));
 
 endif;
+
+
+/**
+ * Remove parent theme templates
+ */
+function tfc_remove_page_templates( $templates ) {
+    unset( $templates['template-home-cover.php'] );
+    unset( $templates['template-home.php'] );
+    unset( $templates['template-page-fullwidth-gallery.php'] );
+    unset( $templates['template-page-fullwidth.php'] );
+    unset( $templates['template-page-gallery.php'] );
+    unset( $templates['template-page-left-sidebar.php'] );
+    unset( $templates['template-page-no-bg.php'] );
+    return $templates;
+}
+add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
