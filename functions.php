@@ -62,3 +62,61 @@ function lusine_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'lusine_scripts' );
+
+
+/**
+ * ACF : Page Gallery
+ */
+
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array (
+	'key' => 'group_573a30970d673',
+	'title' => 'Page gallery',
+	'fields' => array (
+		array (
+			'key' => 'field_573a30afc0040',
+			'label' => 'Gallery',
+			'name' => 'gallery',
+			'type' => 'gallery',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'min' => '',
+			'max' => '',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'templates/gallery.php',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+endif;
