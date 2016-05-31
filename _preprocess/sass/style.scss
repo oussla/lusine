@@ -98,7 +98,7 @@ body {
 
 .pre-header { 
     border-bottom: none;
-    padding: 0 $w2cols 0 $w2cols;
+    padding: 0 0 0 $w2cols;
     width: $w9cols;
     background: #000;
     height: 100px;
@@ -163,7 +163,6 @@ body {
 
         li ul { /* second-level lists */
             position: absolute;
-            background: orange;
             width: 200px;
             left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
         }
@@ -235,7 +234,7 @@ body {
             padding: 14px 1000em;
             margin: 0 -1000em;
             z-index: 101;
-            background-color: #fff;
+            background-color: #efefef;
 
             li.menu-item-has-children > a,
             li.menu-item-has-children:hover > a {
@@ -260,7 +259,6 @@ body {
         li li ul {
             /* nécessaire pour contenir tous les éléments de niveau 3 */
             width: 100%;
-            background-color: #fff; // red
         }
 
 
@@ -272,7 +270,7 @@ body {
 
         li li:hover li {
             /* DEMO ONLY */
-            background-color: #fff; // yellow
+            // background-color: #fff;
         }
 
         li li li a {
@@ -367,6 +365,13 @@ article, .hentry {
     background-color: #fff;
 }
 
+.entry-content {
+    p {
+        a {
+            font-weight: bold;
+        }
+    }
+}
 
 /**
  * Home
@@ -388,15 +393,6 @@ article, .hentry {
 }
 
 .gallery {
-
-    /*
-    padding-left: 0;
-    padding-right: 0;
-
-    .content-area {
-        padding-left: $w2cols;
-    }
-    */
 
     .entry-title {
         font-size: 60px;
@@ -532,6 +528,40 @@ article, .hentry {
             padding-right: 0;
         }
 
+    }
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 860px) {
+
+    .site-title {
+        margin: 0;
+        text-align: center;
+
+        a {
+            margin: 0 auto;
+        }
+
+    }
+
+    .pre-header {
+        padding: 0 5%;
+        width: 50%;
+        height: 70px;
+    }
+
+    .lusine-main-nav .lusine-menu {
+        display: none;
+    }
+
+    article, .hentry {
+        margin: 0;
+        width: 100%;
     }
 
 }
