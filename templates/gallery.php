@@ -34,8 +34,48 @@ get_header(); ?>
                                     echo wp_get_attachment_image($image['id'], 'gallery_medium');
                                     ?>
 
+                                    <?php
+
+                                    /*
+                                        Displaying images infos.
+                                        Only if a real title has been provided.
+                                     */
+
+                                    if(isset($image['title']) && $image['title'] !== $image['name']):
+                                    ?>
+
+                                    <div class="image-infos">
+                                        <span class="title"><?php echo $image['title']; ?></span>
+                                        <?php 
+                                        
+                                        if(isset($image['caption']) && $image['caption'] != ''):
+                                        ?>
+                                        <span class="caption">
+                                        <?php echo $image['caption']; ?>
+                                        </span>
+                                        <?php
+                                        endif;
+
+                                        if(isset($image['description']) && $image['description'] != ''):
+                                        ?>
+                                        <span class="description">
+                                        <?php echo $image['description']; ?>
+                                        </span>
+                                        <?php
+                                        endif;
+                                        ?>
+
+                                    </div>
+
+                                    <?php
+                                    endif;
+                                    ?>
+
                                 </a>
                             </figure>
+
+                            <?php // print_r($image); ?>
+
                         <?php endforeach; ?>
                 <?php
 

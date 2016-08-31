@@ -401,6 +401,25 @@ article, .hentry {
 
 }
 
+.gallery-image {
+
+    .image-infos {
+        padding: 8px 10px 12px 10px;
+        background-color: #000;
+        color: #fff;
+
+        span {
+            display: block;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+    }
+
+}
+
 
 /**
  * Forms
